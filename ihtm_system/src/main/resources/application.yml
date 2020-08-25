@@ -1,8 +1,8 @@
 server:
-  port: 9001
+  port: 9002
 spring:
   application:
-    name: ihrm-company #指定服务名
+    name: ihrm-system #指定服务名
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
     url: jdbc:mysql://124.70.181.89:3306/ihrm?useUnicode=true&characterEncoding=utf8
@@ -12,3 +12,8 @@ spring:
     database: MySQL
     show-sql: true
     open-in-view: true
+
+jwt:
+  config:
+    key: saas-ihrm
+    ttl: 3600000

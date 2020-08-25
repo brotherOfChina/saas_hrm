@@ -68,7 +68,13 @@ public class CompanyService {
      * 根据id查询企业
      */
     public Company findById(String id) {
-        return companyDao.findById(id).get();
+        if (companyDao.findById(id).isPresent()) {
+            return companyDao.findById(id).get();
+        }else {
+            System.out.println("没有");
+            return null;
+        }
+
     }
 
     /**

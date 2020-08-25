@@ -15,6 +15,7 @@ import java.util.List;
  * @author zhaopj
  * 2020/7/15
  */
+@CrossOrigin
 @RequestMapping("/company")
 @RestController
 public class CompanyController {
@@ -45,8 +46,8 @@ public class CompanyController {
         return new Result(ResultCode.SUCCESS);
     }
 
-    //根据id查询企业
-    @RequestMapping(method = RequestMethod.GET, value = "/  {id}")
+    //根据id查询企业 
+    @RequestMapping(method = RequestMethod.GET, value = "/{id}")
     public Result findById(@PathVariable(value = "id") String id) {
         Company company = companyService.findById(id);
         return new Result(ResultCode.SUCCESS, company);
